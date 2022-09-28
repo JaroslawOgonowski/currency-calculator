@@ -1,0 +1,13 @@
+.body{
+    background-image: url("../images/background.jpg");
+    background-repeat: round;
+}
+.body__header{
+    font-size: 26px;
+    color:rgb(46, 29, 8);
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(236, 236, 181);
+}

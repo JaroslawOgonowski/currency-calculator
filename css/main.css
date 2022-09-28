@@ -1,0 +1,14 @@
+.main {
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: rgba(221, 220, 231, 0.767);
+    background-color: rgb(77, 39, 17);
+}
+.main__footer{
+    font-size: 12px;
+    text-align: right;
+    padding-right: 10px;
+}

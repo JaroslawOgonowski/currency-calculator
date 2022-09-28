@@ -1,0 +1,84 @@
+.form__labelText {
+    max-width: 200px;
+    width: 100%;
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.form__field {
+    padding: 10px;
+    width: 600px;
+    border-radius: 10px;
+    border: solid rgb(16, 27, 77) 2px;
+}
+.form__fieldset{
+    border-radius: 5px;
+    border: solid rgb(236, 142, 34) 2px;
+}
+.form__legend{
+    padding: 12px;
+}
+
+.form__field:hover {
+    padding: 10px;
+    width: 600px;
+    border-radius: 10px;
+    border: solid rgb(49, 75, 190) 2px;
+    background-color: rgb(224, 240, 250);
+}
+
+.form__select {
+    padding: 10px;
+    width: 600px;
+    border-radius: 10px;
+    border: solid rgb(16, 27, 77) 2px;
+}
+
+.form__select:hover {
+    padding: 10px;
+    width: 600px;
+    border-radius: 10px;
+    border: solid rgb(49, 75, 190) 2px;
+    background-color: rgb(224, 240, 250);
+}
+
+.form__field--readonly {
+    padding: 10px;
+    width: 600px;
+    background-color: rgb(236, 225, 195);
+    text-align: center;
+    border-radius: 10px;
+    border: solid rgb(16, 27, 77) 2px;
+}
+
+.form__currency {
+    font-size: 15px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.form__button {
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 45px;
+    width: 120px;
+    background-color: rgb(46, 29, 8);
+    border: solid rgb(236, 142, 34) 2px;
+    color: rgba(221, 220, 231, 0.767);
+}
+
+.form__button:hover {
+    background-color: rgb(59, 37, 9);
+    border: solid rgb(199, 92, 4) 2px;
+    color: rgba(255, 255, 255, 0.767);
+
+}
+
+.form__button:active {
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(122, 87, 41);
+    border: solid rgb(255, 72, 0) 2px;
+    color: rgb(255, 255, 255);
+
+}

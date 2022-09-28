@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/body.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/form.css" rel="stylesheet">
+    <script defer src="js/script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Kalkulator walut</title>
+</head>
+
+<body class="body">
+
+    <header class="body__header">
+        <h1>Kalkulator walut</h1>
+    </header>
+    <main class="main">
+        <form class="js-form form">
+            <fieldset class="form__fieldset">
+                <legend class="form__legend"><span class="form__legendText">Twoje środki:</span></legend>
+                <p>
+                    <label class="form__label"><span class="form__labelText">Kwota:</span> <input
+                            class="form__field js-startSum" required type="number" min="0.01" step="0.01"
+                            name="startSum"></label>
+                </p>
+                <p>
+                    <label class="form__label"><span class="form__labelText">W jakiej walucie:</span><select
+                            class="form__select js-yourCurrency" name="yourCurrency">
+                            <option selected value="PLN">PLN: Polska</option>
+                            <option value="EUR">EUR: Unia Europejska</option>
+                            <option value="USD">USD: USA</option>
+                            <option value="GBP">GBP: Wielka Brytania</option>
+                        </select> </label>
+
+                <p><label class="form__label"><span class="form__labelText">Wybierz walutę którą chcesz
+                            otrzymać:</span><select class="form__select js-exchangedCurrency" name="exchangedCurrency">
+                            <option value="exchangedPLN">PLN: Polska</option>
+                            <option selected value="exchangedEUR">EUR: Unia Europejska</option>
+                            <option value="exchangedUSD">USD: USA</option>
+                            <option value="exchangedGBP">GBP: Wielka Brytania</option>
+                        </select></label>
+            </fieldset>
+            <fieldset class="form__fieldset">
+                <legend class="form__legend"><span class="form__legendText">Środki po wymianie:</span></legend>
+
+                <p><label class="form__label"><span class="form__labelText">Kurs wymiany:</span> <input
+                            class="form__field--readonly js-exchangeRate" readonly name="exchangeRate"></label></p>
+                <p><label class="form__label"><span class="form__labelText">Otrzymana kwota:</span> </label><input
+                        class="form__field--readonly js-receivedAmount" readonly name="receivedAmount"></p>
+                <p><span class="form__currency js-receivedAmountCurrency"> EUR</span></p>
+                <p><button class="form__button">Przelicz</button></p>
+            </fieldset>
+        </form>
+        <footer class="main__footer">Jarosław Ogonowski 2022
+            <p>Kurs walut aktualny na dzień: 10.09.2022</p>
+        </footer>
+    </main>
+</body>
+
+</html>
