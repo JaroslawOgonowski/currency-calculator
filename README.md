@@ -1,5 +1,6 @@
 # Currency calculator
 ## Demo: 
+https://jaroslawogonowski.github.io/currency-calculator/
 
 The website presents the use of forms and their validation, BEM conventions and basic js functions.
 
