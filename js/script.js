@@ -26,34 +26,58 @@
                 case "GBP":
                     return baseCurrencyResult = +startSum.value * 5.556;
             }
-
         })
     }
-
     exchangedMoney = () => {
         const exchangedCurrency = document.querySelector(".js-exchangedCurrency");
-        const receivedAmount = document.querySelector(".js-receivedAmount");
-        const form = document.querySelector(".js-form")
+        let receivedAmount = document.querySelector(".js-receivedAmount");
         const button = document.querySelector(".form__button");
-        button.addEventListener("click", () => {
-            if (exchangedCurrency.value === "exchangedPLN") {
-                receivedAmount.value = (+baseCurrencyResult).toFixed(2) + " PLN";
+        const yourCurrency = document.querySelector(".js-yourCurrency");
+        const startSum = document.querySelector(".js-startSum");
 
-            } else if (exchangedCurrency.value === "exchangedEUR") {
-                receivedAmount.value = (+baseCurrencyResult * 0.2053).toFixed(2) + " EUR";
+        const plnChange = () => {
+            button.addEventListener("click", () => {
+                if (exchangedCurrency.value === "exchangedPLN")
+                    return receivedAmount.value = (+baseCurrencyResult).toFixed(2) + " PLN";
+            })
+        }
 
+        const euroChange = () => {
+            button.addEventListener("click", () => {
+                if (exchangedCurrency.value === "exchangedEUR" && yourCurrency.value === "EUR")
+                    return receivedAmount.value = startSum.value + " EUR";
+                else if (exchangedCurrency.value === "exchangedEUR" && yourCurrency.value !== "EUR")
+                    return receivedAmount.value = (+baseCurrencyResult * 0.2053).toFixed(2) + " EUR";
+            })
+        }
+        const usdChange = () => {
+            button.addEventListener("click", () => {
+                if (exchangedCurrency.value === "exchangedUSD" && yourCurrency.value === "USD")
+                    return receivedAmount.value = startSum.value + " USD";
+                else if (exchangedCurrency.value === "exchangedUSD" && yourCurrency.value !== "USD")
+                    return receivedAmount.value = (+baseCurrencyResult * 0.2019).toFixed(2) + " USD";
+            })
+        }
+        const gbpChange = () => {
+            button.addEventListener("click", () => {
+                if (exchangedCurrency.value === "exchangedGBP" && yourCurrency.value === "GBP")
+                    return receivedAmount.value = startSum.value + " GBP";
+                else if (exchangedCurrency.value === "exchangedGBP" && yourCurrency.value !== "GBP")
+                    return receivedAmount.value = (+baseCurrencyResult * 0.18).toFixed(2) + " GBP";
             }
-            else if (exchangedCurrency.value === "exchangedUSD") {
-                receivedAmount.value = (+baseCurrencyResult * 0.2019).toFixed(2) + " USD";
-            }
-            else if (exchangedCurrency.value === "exchangedGBP") {
-                receivedAmount.value = (+baseCurrencyResult * 0.18).toFixed(2) + " GBP";
-            }
+            )
+        }
+        initialChange = () => {
+            gbpChange();
+            usdChange();
+            euroChange();
+            plnChange();
+        }
+    }
 
-        })
-    };
     welcome();
     formValidation();
     baseCurrency();
     exchangedMoney();
+    initialChange();
 }
