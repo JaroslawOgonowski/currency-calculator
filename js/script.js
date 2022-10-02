@@ -1,31 +1,20 @@
 {
     const welcome = () => { console.log("HelloBigBrain!"); }
-    welcome();
-}
-{
-    const form = document.querySelector(".js-form")
-    const disableFormSending = () => form.addEventListener("submit", (event) => {
-        event.preventDefault();
-    })
-    disableFormSending();
-}
-{
-    const form = document.querySelector(".js-form")
-    const receivedAmount = document.querySelector(".js-receivedAmount");
-    const formValidation = () => form.addEventListener("input", () => {
-        receivedAmount.value = "Wprowadź wszystkie dane, a następnie przelicz";
-    })
-    formValidation();
-}
-{
 
-    const yourCurrency = document.querySelector(".js-yourCurrency");
-    const startSum = document.querySelector(".js-startSum");
-    const exchangedCurrency = document.querySelector(".js-exchangedCurrency");
-    const receivedAmount = document.querySelector(".js-receivedAmount");
-    const button = document.querySelector(".form__button")
-
-    const baseCurrency = () =>
+    const formValidation = () => {
+        const form = document.querySelector(".js-form");
+        const receivedAmount = document.querySelector(".js-receivedAmount");
+        form.addEventListener("input", () => {
+            receivedAmount.value = "Wprowadź wszystkie dane, a następnie przelicz";
+        })
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+        })
+    }
+    const baseCurrency = () => {
+        const yourCurrency = document.querySelector(".js-yourCurrency");
+        const startSum = document.querySelector(".js-startSum");
+        const button = document.querySelector(".form__button");
         button.addEventListener("click", () => {
             switch (yourCurrency.value) {
                 case "PLN":
@@ -39,9 +28,13 @@
             }
 
         })
+    }
 
-    exchangedProces = () => {
+    exchangedMoney = () => {
+        const exchangedCurrency = document.querySelector(".js-exchangedCurrency");
+        const receivedAmount = document.querySelector(".js-receivedAmount");
         const form = document.querySelector(".js-form")
+        const button = document.querySelector(".form__button");
         button.addEventListener("click", () => {
             if (exchangedCurrency.value === "exchangedPLN") {
                 receivedAmount.value = (+baseCurrencyResult).toFixed(2) + " PLN";
@@ -59,8 +52,8 @@
 
         })
     };
+    welcome();
+    formValidation();
     baseCurrency();
-    exchangedProces();
-
+    exchangedMoney();
 }
-
