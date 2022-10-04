@@ -2,7 +2,11 @@
 ## Demo: 
 https://jaroslawogonowski.github.io/currency-calculator/
 
-The website presents the use of forms and their validation, BEM conventions and basic js functions.
+The website presents the use of:
+-forms and their validation, 
+-BEM conventions, 
+-basic js functions,
+-ES6 (features: let, const, arrow functions)
 
 I also carried out full js refactoring.
 This is my first very complex code:
@@ -108,5 +112,7 @@ form.addEventListener("input", () => {
 ```
 Now it's shorter, tidy and legible.
 It is also based on completely different assumptions than originally.
+
+##
 
 ## Made by: Jarosław Ogonowski 2022
