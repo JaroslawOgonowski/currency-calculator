@@ -13,11 +13,13 @@
     border-radius: 10px;
     border: solid rgb(16, 27, 77) 2px;
 }
-.form__fieldset{
+
+.form__fieldset {
     border-radius: 5px;
     border: solid rgb(236, 142, 34) 2px;
 }
-.form__legend{
+
+.form__legend {
     padding: 12px;
 }
 
@@ -52,6 +54,7 @@
     border-radius: 10px;
     border: solid rgb(16, 27, 77) 2px;
 }
+
 .form__button {
     font-family: 'Montserrat', sans-serif;
     border-radius: 45px;
