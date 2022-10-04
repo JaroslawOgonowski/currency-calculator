@@ -6,7 +6,7 @@ The website presents the use of forms and their validation, BEM conventions and 
 
 I also carried out full js refactoring.
 This is my first very complex code:
-
+Version 1
 ```console.log("HelloBigBrain!");
 let startSum = document.querySelector(".js-startSum");
 let yourCurrency = document.querySelector(".js-yourCurrency");
