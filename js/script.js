@@ -35,6 +35,7 @@
         const button = document.querySelector(".form__button");
         const yourCurrency = document.querySelector(".js-yourCurrency");
         const startSum = document.querySelector(".js-startSum");
+        
         const plnChange = () => {
             button.addEventListener("click", () => {
                 if (exchangedCurrency.value === "exchangedPLN")
