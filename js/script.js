@@ -1,84 +1,118 @@
-{
-    let baseCurrencyResult;
-    const welcome = () => { console.log("HelloBigBrain!"); }
 
-    const formValidation = () => {
+
+
+{
+let baseCurrencyResult;
+    const welcome = () => {
+        console.log("HelloBigBrain!");
+        sendElements();
+    }
+
+
+    const sendElements = () => {
+        console.log("send elements działa");
+        const startSumElement = document.querySelector(".js-startSumElement");
+        const yourCurrencyElement = document.querySelector(".js-yourCurrencyElement");
+        const exchangedCurrencyElement = document.querySelector(".js-exchangedCurrencyElement");
+        const receivedAmountElement = document.querySelector(".js-receivedAmountElement");
+        const startSum = startSumElement.value;
+        const yourCurrency = yourCurrencyElement.value;
+        const exchangedCurrency = exchangedCurrencyElement.value;
+        let receivedAmount = receivedAmountElement.value;
+        formValidation(startSum, yourCurrency, exchangedCurrency, receivedAmount);
+           
+    }
+
+    const baseCurrency = (startSum, yourCurrency, exchangedCurrency, receivedAmount) => {
+        console.log("base curr działa");
+        const button = document.querySelector(".form__button");          
+        button.addEventListener("click", () => {
+            switch (yourCurrency) {
+                case "PLN":
+                    return baseCurrencyResult = +startSum;
+                case "EUR":
+                    return baseCurrencyResult = +startSum * 4.8698;
+                case "USD":
+                    return baseCurrencyResult = +startSum * 4.9533;
+                case "GBP":
+                    return baseCurrencyResult = +startSum * 5.556;
+            }
+        }) 
+        
+        exchangedMoney(startSum, yourCurrency, exchangedCurrency, receivedAmount);
+    }
+
+    const formValidation = (startSum, yourCurrency, exchangedCurrency, receivedAmount) => {
+        console.log("form vali działa");
         const form = document.querySelector(".js-form");
-        const receivedAmount = document.querySelector(".js-receivedAmount");
         form.addEventListener("input", () => {
-            receivedAmount.value = "Wprowadź wszystkie dane, a następnie przelicz";
+        receivedAmount = "Wprowadź wszystkie dane, a następnie przelicz";
         })
         form.addEventListener("submit", (event) => {
             event.preventDefault();
         })
+        baseCurrency(startSum, yourCurrency, exchangedCurrency, receivedAmount);
     }
-    const baseCurrency = () => {
-        const yourCurrency = document.querySelector(".js-yourCurrency");
-        const startSum = document.querySelector(".js-startSum");
+
+    const exchangedMoney = (startSum, yourCurrency, exchangedCurrency, receivedAmount) => {
+        console.log("exch money działa");
         const button = document.querySelector(".form__button");
-        button.addEventListener("click", () => {
-            switch (yourCurrency.value) {
-                case "PLN":
-                    return baseCurrencyResult = +startSum.value;
-                case "EUR":
-                    return baseCurrencyResult = +startSum.value * 4.8698;
-                case "USD":
-                    return baseCurrencyResult = +startSum.value * 4.9533;
-                case "GBP":
-                    return baseCurrencyResult = +startSum.value * 5.556;
-            }
-        })
-    }
-    exchangedMoney = () => {
-        const exchangedCurrency = document.querySelector(".js-exchangedCurrency");
-        let receivedAmount = document.querySelector(".js-receivedAmount");
-        const button = document.querySelector(".form__button");
-        const yourCurrency = document.querySelector(".js-yourCurrency");
-        const startSum = document.querySelector(".js-startSum");
-        
         const plnChange = () => {
             button.addEventListener("click", () => {
-                if (exchangedCurrency.value === "exchangedPLN")
-                    return receivedAmount.value = `${baseCurrencyResult.toFixed(2)}` + " PLN";
+                if (exchangedCurrency === "exchangedPLN")
+                    return receivedAmount = `${baseCurrencyResult.toFixed(2)} ${exchangedCurrency}`;
             })
         }
 
-        const euroChange = () => {
+        const euroChange = (startSum, yourCurrency, exchangedCurrency, receivedAmount) => {
+            console.log("wymiana euro");
+            const button = document.querySelector(".form__button");
             button.addEventListener("click", () => {
-                if (exchangedCurrency.value === "exchangedEUR" && yourCurrency.value === "EUR")
-                    return receivedAmount.value = startSum.value + " EUR";
-                else if (exchangedCurrency.value === "exchangedEUR" && yourCurrency.value !== "EUR")
-                    return receivedAmount.value = (+baseCurrencyResult * 0.2053).toFixed(2) + " EUR";
+                if (exchangedCurrency === "exchangedEUR" && yourCurrency === "EUR")
+                    return receivedAmount = `${startSum} ${exchangedCurrency}`;
+                else if (exchangedCurrency === "exchangedEUR" && yourCurrency !== "EUR")
+                    return receivedAmount = `${(+baseCurrencyResult * 0.2053).toFixed(2)} ${exchangedCurrency}`;
             })
         }
-        const usdChange = () => {
+        const usdChange = (startSum, yourCurrency, exchangedCurrency, receivedAmount) => {
+            console.log("wymiana usd");
+            const button = document.querySelector(".form__button");
             button.addEventListener("click", () => {
-                if (exchangedCurrency.value === "exchangedUSD" && yourCurrency.value === "USD")
-                    return receivedAmount.value = startSum.value + " USD";
-                else if (exchangedCurrency.value === "exchangedUSD" && yourCurrency.value !== "USD")
-                    return receivedAmount.value = (+baseCurrencyResult * 0.2019).toFixed(2) + " USD";
+                if (exchangedCurrency === "exchangedUSD" && yourCurrency === "USD")
+                    return receivedAmount = `${startSum} ${exchangedCurrency}`
+                else if (exchangedCurrency === "exchangedUSD" && yourCurrency !== "USD")
+                    return receivedAmount = `${(+baseCurrencyResult * 0.2019).toFixed(2)} ${exchangedCurrency}`;
             })
         }
-        const gbpChange = () => {
+        const gbpChange = (startSum, yourCurrency, exchangedCurrency, receivedAmount) => {
+            console.log("wymiana gbp");
+            const button = document.querySelector(".form__button");
             button.addEventListener("click", () => {
-                if (exchangedCurrency.value === "exchangedGBP" && yourCurrency.value === "GBP")
-                    return receivedAmount.value = startSum.value + " GBP";
-                else if (exchangedCurrency.value === "exchangedGBP" && yourCurrency.value !== "GBP")
-                    return receivedAmount.value = (+baseCurrencyResult * 0.18).toFixed(2) + " GBP";
+                if (exchangedCurrency === "exchangedGBP" && yourCurrency === "GBP")
+                    return receivedAmount = `${startSum} ${exchangedCurrency}`
+                else if (exchangedCurrency === "exchangedGBP" && yourCurrency !== "GBP")
+                    return receivedAmount = `${(+baseCurrencyResult * 0.18).toFixed(2)} ${exchangedCurrency}`;
             }
             )
         }
-        initialChange = () => {
-            gbpChange();
-            usdChange();
-            euroChange();
-            plnChange();
+        const initialChange = (startSum, yourCurrency, exchangedCurrency, receivedAmount) => {
+            console.log("ini change działa!");
+            console.log(startSum);
+        console.log(yourCurrency);
+        console.log(exchangedCurrency);
+            plnChange(startSum, yourCurrency, exchangedCurrency, receivedAmount);
+            gbpChange(startSum, yourCurrency, exchangedCurrency, receivedAmount);
+            usdChange(startSum, yourCurrency, exchangedCurrency, receivedAmount);
+            euroChange(startSum, yourCurrency, exchangedCurrency, receivedAmount);
         }
+        initialChange(startSum, yourCurrency, exchangedCurrency, receivedAmount);
     }
 
-    welcome();
-    formValidation();
-    baseCurrency();
-    exchangedMoney();
-    initialChange();
+
+
+    const init = () => {
+        welcome();
+    }
+
+    init();
 }

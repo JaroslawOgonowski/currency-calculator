@@ -30,15 +30,15 @@
     <main class="main">
         <form class="js-form form">
             <fieldset class="form__fieldset">
-                <legend class="form__legend"><span class="form__legendText">Twoje środki:</span></legend>
+                <legend class="form__legend">Twoje środki:</legend>
                 <p>
                     <label class="form__label"><span class="form__labelText">Kwota:</span> <input
-                            class="form__field js-startSum" required type="number" min="0.01" step="0.01"
+                            class="form__field js-startSumElement" required type="number" min="0.01" step="0.01"
                             name="startSum"></label>
                 </p>
                 <p>
                     <label class="form__label"><span class="form__labelText">W jakiej walucie:</span><select
-                            class="form__select js-yourCurrency" name="yourCurrency">
+                            class="form__select js-yourCurrencyElement" name="yourCurrency">
                             <option selected value="PLN">PLN: Polska</option>
                             <option value="EUR">EUR: Unia Europejska</option>
                             <option value="USD">USD: USA</option>
@@ -46,7 +46,7 @@
                         </select> </label>
 
                 <p><label class="form__label"><span class="form__labelText">Wybierz walutę którą chcesz
-                            otrzymać:</span><select class="form__select js-exchangedCurrency" name="exchangedCurrency">
+                            otrzymać:</span><select class="form__select js-exchangedCurrencyElement" name="exchangedCurrency">
                             <option value="exchangedPLN">PLN: Polska</option>
                             <option selected value="exchangedEUR">EUR: Unia Europejska</option>
                             <option value="exchangedUSD">USD: USA</option>
@@ -54,9 +54,9 @@
                         </select></label>
             </fieldset>
             <fieldset class="form__fieldset">
-                <legend class="form__legend"><span class="form__legendText">Środki po wymianie:</span></legend>
+                <legend class="form__legend">Środki po wymianie:</legend>
                 <p><label class="form__label"><span class="form__labelText">Otrzymana kwota:</span> </label><input
-                        class="form__field--readonly js-receivedAmount" readonly name="receivedAmount"></p>
+                        class="form__field--readonly js-receivedAmountElement" readonly name="receivedAmount"></p>
                 <p><button class="form__button">Przelicz</button></p>
             </fieldset>
         </form>

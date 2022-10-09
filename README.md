@@ -10,7 +10,7 @@ The website presents the use of:
 
 I also carried out full js refactoring.
 This is my first very complex code:
-Version 1
+Version 1 - raw
 ```console.log("HelloBigBrain!");
 let startSum = document.querySelector(".js-startSum");
 let yourCurrency = document.querySelector(".js-yourCurrency");
@@ -111,8 +111,9 @@ form.addEventListener("input", () => {
     
 ```
 
-wersja 2:
-```{
+version 2 - when i learned template literals and js function
+```
+{
     let baseCurrencyResult;
     const welcome = () => { console.log("HelloBigBrain!"); }
 
@@ -149,6 +150,7 @@ wersja 2:
         const button = document.querySelector(".form__button");
         const yourCurrency = document.querySelector(".js-yourCurrency");
         const startSum = document.querySelector(".js-startSum");
+        
         const plnChange = () => {
             button.addEventListener("click", () => {
                 if (exchangedCurrency.value === "exchangedPLN")
