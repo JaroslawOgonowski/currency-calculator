@@ -3,10 +3,10 @@
 https://jaroslawogonowski.github.io/currency-calculator/
 
 ### The website presents the use of:
--forms and their validation, 
--BEM conventions, 
--basic js functions,
--ES6 (features: let, const, arrow functions)
+- forms and their validation, 
+- BEM conventions, 
+- basic js functions,
+- ES6 (features: let, const, arrow functions)
 
 ![Currency calculator](./images/currencyCalculator.gif)
 
