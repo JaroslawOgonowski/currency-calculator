@@ -2,11 +2,13 @@
 ## Demo: 
 https://jaroslawogonowski.github.io/currency-calculator/
 
-The website presents the use of:
+### The website presents the use of:
 -forms and their validation, 
 -BEM conventions, 
 -basic js functions,
 -ES6 (features: let, const, arrow functions)
+
+![Currency calculator](./images/currencyCalculator.gif)
 
 I also carried out full js refactoring.
 This is my first very complex code:
@@ -202,6 +204,5 @@ version 2 - when i learned template literals and js function
 Now it's shorter, tidy and legible.
 It is also based on completely different assumptions than originally.
 
-##
 
 ## Made by: Jarosław Ogonowski 2022
