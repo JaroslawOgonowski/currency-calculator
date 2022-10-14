@@ -25,6 +25,8 @@
                     return baseCurrencyResult = +startSum * 4.9533;
                 case "GBP":
                     return baseCurrencyResult = +startSum * 5.556;
+                case "BTC":
+                    return baseCurrencyResult = +startSum * 94899.98;
             };
         });
     };
@@ -55,6 +57,11 @@
                 return receivedAmountElement.value = `${(+baseCurrencyResult * 0.18).toFixed(2)} ${exchangedCurrency}`;
             }
         };
+        const btcChange = () => {
+            if (exchangedCurrency === "BTC" && yourCurrency !== "BTC") {
+                return receivedAmountElement.value = `${(+baseCurrencyResult * 0.000011).toFixed(8)} ${exchangedCurrency}`;
+            }
+        };
 
         initialChange = () => {
             button.addEventListener("click", () => {
@@ -62,6 +69,7 @@
                 usdChange();
                 euroChange();
                 plnChange();
+                btcChange();
                 thisSameCurrency();
             });
         };
